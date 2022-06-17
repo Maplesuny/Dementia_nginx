@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  backend:
+    image: 0610_dementia_backend
+    build: ../Deementia-backend
+    container_name: 0610_DeBackend
+    restart: always
+    ports:
+      - 1902:80
+  nginx:
+    image: nginx:stable
+    container_name: 0610_DeFrontend
+    restart: always
+    ports:
+      - 9001:80
+    volumes:
+      - ./dist:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
