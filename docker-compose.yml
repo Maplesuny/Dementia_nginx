@@ -1,15 +1,15 @@
 version: '3.9'
 services:
   backend:
-    image: 0610_dementia_backend
+    image: 0722_dementia_backend
     build: ../Deementia-backend
-    container_name: 0610_DeBackend
+    container_name: 0722_DeBackend
     restart: always
     ports:
       - 1902:80
   nginx:
     image: nginx:stable
-    container_name: 0610_DeFrontend
+    container_name: 0722_DeFrontend
     restart: always
     ports:
       - 9001:80
